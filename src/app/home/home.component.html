@@ -1,0 +1,31 @@
+<div>
+  <h1 class="header">Kalendarz</h1>
+
+  <mat-form-field class="calendar">
+    <mat-label for="date">Data</mat-label>
+    <input
+      matInput
+      type="datetime-local"
+      [formControl]="dateControl"
+      (input)="selectDate($event)"
+      min="{{today }}"
+    >
+  </mat-form-field>
+
+  <h3 class="date">{{this.dateString}}</h3>
+  <mat-grid-list cols="1" rowHeight="2.5:1">
+    <mat-grid-tile
+      *ngFor="let showing of filteredShowings"
+    >
+      <app-showing
+        [showing]="showing"
+        [showButtons]="false"
+        [availableTickets]="getAvailableTickets(showing.ticketsAvailable, showing.ticketsSold)"
+        [movieTitle]="getMovieTitle(showing.movieId)"
+      ></app-showing>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div class="list-empty" *ngIf="filteredShowings.length == 0">
+    Brak seansów w danym dniu po podanej godzinie
+  </div>
+</div>

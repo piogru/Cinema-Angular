@@ -1,0 +1,39 @@
+<div class="center">
+  <h1 class="header">
+    {{this.selectedMovie.title}}
+  </h1>
+  <div>
+    <div>
+      <div class="label">Id</div>
+      <p>{{selectedMovie?.id}}</p>
+    </div>
+    <div>
+      <div class="label">Czas trwania</div>
+      <p>{{selectedMovie.length}}</p>
+    </div>
+
+    <div class="label popularity">Popularność filmu</div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-5">
+          <!-- <Form.Label htmlFor="start" class="fw-bold">Sprawdź popularność filmu: </Form.Label><br/> -->
+          <mat-form-field class="example-full-width">
+            <mat-label for="date">Data</mat-label>
+            <input
+              matInput
+              [formControl]="dateControl"
+              [matDatepicker]="picker"
+              (dateChange)="selectDate($event)"
+            >
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <p><i>*Popularność filmu na tle trzech poprzednich i trzech następnych dni od wybranej daty.</i></p>
+        </div>
+      </div>
+    </div>
+
+    <chart [type]="type" [data]="chartData" [options]="options"></chart>
+
+  </div>
+</div>

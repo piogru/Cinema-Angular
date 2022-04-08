@@ -1,0 +1,22 @@
+<div>
+  <h1 class="header">Seanse</h1>
+  <div>
+    <button class="page-button" mat-raised-button color="primary" (click)="openDialog(true,false,false,null)">Dodaj seans</button>
+  </div>
+
+  <mat-grid-list cols="1" rowHeight="2.5:1">
+    <mat-grid-tile
+      *ngFor="let showing of showingsList"
+    >
+      <app-showing
+        [showing]="showing"
+        (deleteShowing)="deleteShowing(showing)"
+        (editShowing)="openDialog(false,true,false,showing)"
+        (buyTicket)="openDialog(false,false,true,showing)"
+        (showButtons)="true"
+        [availableTickets]="getAvailableTickets(showing.ticketsAvailable, showing.ticketsSold, showing.roomId)"
+        [movieTitle]="getMovieTitle(showing.movieId)"
+      ></app-showing>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -1,0 +1,32 @@
+<div>
+  <h1 class="header">Filmy</h1>
+  <div>
+    <button class="page-button" mat-raised-button color="primary" (click)="openDialog(true,false)">Dodaj film</button>
+  </div>
+
+  <mat-grid-list cols="2" rowHeight="2.5:1">
+    <mat-grid-tile
+      *ngFor="let movie of movieList"
+    >
+      <mat-card class="movie-card">
+        <mat-card-header>
+          <mat-card-title>
+            <h1 class="title">{{movie.title | titlecase}}</h1>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div>
+            <div class="label">Czas trwania</div>
+            <div>{{movie.length}}</div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button class="card-button" mat-button color="warn" (click)="deleteMovie(movie.id)">Usuń</button>
+          <button class="card-button" mat-button color="primary" (click)="openDialog(false,true,movie.id)">Edytuj</button>
+          <button class="card-button" mat-raised-button color="primary" [routerLink]="['/movies/' + movie.id]">Szczegóły</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+

@@ -1,0 +1,107 @@
+/* span {
+
+  text-align: center;
+  font-weight: bold;
+} */
+
+h1 {
+  font-size: 225%;
+}
+
+.selected {
+    background-color: moccasin;
+}
+
+.mat-icon {
+    font-size: 20px;
+}
+
+.page-button {
+  width: 20%;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+.card-button {
+  margin-left: 10%;
+  margin-right: 10%;
+  float: right;
+}
+
+.mat-grid-list {
+  width: 70%;
+  margin: auto;
+  margin-top: 1rem;
+  padding-bottom: 0 !important;
+}
+
+.mat-card{
+  width: calc(100% - 70px);;
+}
+
+.mat-card-header {
+  flex-shrink: 0;
+}
+
+.mat-card-content{
+  flex-grow: 1;
+  overflow: auto;
+  margin-top: 1em;
+}
+
+.center {
+  margin: auto;
+  width: 25%;
+  text-align: center;
+}
+
+.header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 350%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mat-grid-tile {
+  max-width: 100vw;
+  /* width: 100%; */
+  /* min-height: 100vh; */
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+app-showing{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+app-add-showing {
+  width: '30%' !important;
+  height: 100%;
+}
+
+panelClass {
+  width: 30%;
+  height: 100%;
+}
+
+.calendar {
+  width: 20%;
+  margin-left:  40%;
+  margin-right:  40%;
+}
+
+.date {
+  text-align: center;
+}
+
+.list-empty {
+  margin-top: 2em;
+  text-align: center;
+  font-size: 200%;
+}

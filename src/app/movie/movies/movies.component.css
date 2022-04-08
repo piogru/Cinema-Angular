@@ -1,0 +1,98 @@
+table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-left: 5%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+table,
+th,
+td {
+    border: 1px solid darkgray;
+    padding: 1em;
+}
+
+th {
+    background-color: gainsboro;
+    color: darkslategrey;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+}
+
+.selected {
+    background-color: moccasin;
+}
+
+.green {
+    color: rgb(29, 216, 12);
+}
+
+.red {
+    color: rgb(250, 4, 4);
+}
+
+.mat-icon {
+    font-size: 20px;
+}
+
+.cat-icon {
+    color: rgb(105, 33, 33);
+    font-size: 70px;
+}
+
+.page-button {
+  width: 20%;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+.card-button {
+  margin-left: 5%;
+  margin-right: 5%;
+  float: right;
+}
+
+.mat-grid-list {
+  width: 70%;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.mat-card{
+  width: calc(100% - 70px);;
+}
+
+.mat-card-header {
+  flex-shrink: 0;
+}
+
+.mat-card-content{
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.center {
+  margin: auto;
+  width: 25%;
+  text-align: center;
+}
+
+.header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 350%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.label {
+  font-size: 125%;
+  /* font-weight: bold; */
+  margin-bottom: 0.5em;
+}
+
+.title {
+  font-size: 175%;
+  font-weight: bold;
+}

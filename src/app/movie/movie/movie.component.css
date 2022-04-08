@@ -1,0 +1,39 @@
+.details {
+    margin-left: 10%;
+    margin-top: 5%;
+    font-size: x-large;
+    border: solid darkslategray 1px;
+    width: 50%;
+    padding: 1%;
+    border-radius: 16px;
+}
+
+.green {
+    color: rgb(29, 216, 12);
+}
+
+.red {
+    color: rgb(250, 4, 4);
+}
+
+.brown {
+    color: rgb(105, 33, 33);
+}
+
+.mat-icon {
+    font-size: 30px;
+}
+
+.small-icon {
+    font-size: 20px;
+}
+
+.basic-container {
+    padding: 30px;
+}
+
+.version-info {
+    font-size: 8pt;
+    float: right;
+    margin: 8px;
+}

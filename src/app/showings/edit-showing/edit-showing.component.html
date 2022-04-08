@@ -1,0 +1,62 @@
+<h1 mat-dialog-title>
+  Edytuj seans</h1>
+<form #f="ngForm" (ngSubmit)="(f.form.valid || f.valid) && onSend(f)">
+  <div mat-dialog-content>
+
+    <mat-form-field class="example-full-width">
+      <mat-label for="date">Data</mat-label>
+      <input
+        name="date"
+        type="datetime-local"
+        matInput
+        #date="ngModel"
+        ngModel
+        appFutureDateValidator
+        required
+      >
+    </mat-form-field>
+    <div *ngIf="date.errors?.['required'] && date.touched" class="alert alert-danger">
+      Data jest wymagana
+    </div>
+    <div *ngIf="date.errors?.['appFutureDateValidator'] && date.touched" class="alert alert-danger">
+      Data zaokrąglona do kwadransu nie może być w przeszłości
+    </div>
+
+    <mat-form-field class="example-full-width">
+      <mat-label for="roomId">Sala</mat-label>
+      <mat-select
+        name="roomId"
+        #roomId="ngModel"
+        ngModel
+        required
+      >
+        <mat-option *ngFor="let room of data.roomsList" [value]="room.id">Sala{{room.id}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div *ngIf="roomId.errors?.['required'] && roomId.touched" class="alert alert-danger">
+      Sala jest wymagana
+    </div>
+
+    <mat-form-field class="example-full-width">
+      <mat-label for="movieId">Film</mat-label>
+      <mat-select
+        name="movieId"
+        #movieId="ngModel"
+        ngModel
+        required
+      >
+        <mat-option *ngFor="let movie of data.moviesList" [value]="movie.id">{{movie.title}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div *ngIf="movieId.errors?.['required'] && movieId.touched" class="alert alert-danger">
+      Film jest wymagany
+    </div>
+
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-button type="submit" cdkFocusInitial>Ok</button>
+    <button mat-button type="button" (click)="onNoClick(); false">Cancel</button>
+  </div>
+</form>
+

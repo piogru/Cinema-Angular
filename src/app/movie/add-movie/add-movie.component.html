@@ -1,0 +1,60 @@
+<h1 mat-dialog-title>
+  Dodaj nowy film
+</h1>
+<form #f="ngForm" (ngSubmit)="(f.form.valid || f.valid) && onSend(f)">
+  <div mat-dialog-content>
+
+    <mat-form-field class="example-full-width">
+      <mat-label for="title">Tytuł</mat-label>
+      <input
+        matInput
+        name="title"
+        #title="ngModel"
+        ngModel
+        required
+        minlength="1"
+        maxlength="30"
+      >
+    </mat-form-field>
+    <div *ngIf="title.errors?.['minlength'] && title.touched" class="alert alert-danger">
+      Tytuł filmu musi być dłuższy niż 1 znak
+    </div>
+    <div *ngIf="title.errors?.['maxlength'] && title.touched" class="alert alert-danger">
+      Tytuł filmu musi być krótszy niż 16 znak
+    </div>
+    <div *ngIf="title.errors?.['required'] && title.touched" class="alert alert-danger">
+      Tytuł filmu jest wymagany
+    </div>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Czas trwania</mat-label>
+      <input
+        matInput
+        type="number"
+        step="1"
+        name="length"
+        #length="ngModel"
+        ngModel
+        required
+        min="30"
+        max="300"
+      >
+    </mat-form-field>
+    <div *ngIf="length.errors?.['min'] && length.touched" class="alert alert-danger">
+      Czas trwania musi być dłuższy niż 30 minut
+    </div>
+    <div *ngIf="length.errors?.['max'] && length.touched" class="alert alert-danger">
+      Czas trwania musi być krótszy niż 300 minut
+    </div>
+    <div *ngIf="length.errors?.['required'] && length.touched" class="alert alert-danger">
+      Czas trwania jest wymagany
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-button type="submit" cdkFocusInitial>Ok</button>
+    <button mat-button type="button" (click)="onNoClick(); false">Anuluj</button>
+  </div>
+
+
+</form>

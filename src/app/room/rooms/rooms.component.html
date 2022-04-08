@@ -1,0 +1,23 @@
+<div>
+  <h1 class="header">Sale</h1>
+
+  <mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile
+      *ngFor="let room of roomList"
+    >
+      <mat-card class="room-card">
+        <mat-card-header>
+          <mat-card-title>
+            <h1>Sala {{room.id}}</h1>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div>
+            <h3>Ilość miejsc:</h3>
+            <div>{{room.capacity}}</div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

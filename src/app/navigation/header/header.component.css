@@ -1,0 +1,28 @@
+.title {
+  text-decoration: none;
+  color: white;
+  margin-right: 5em;
+  font-weight: bold;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  margin-right: 1em;
+}
+.link:hover, .link:active{
+  color: lightgray;
+}
+.navigation-items{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+mat-toolbar{
+  border-radius: 3px;
+}
+@media(max-width: 959px){
+  mat-toolbar{
+      border-radius: 0px;
+  }
+}
